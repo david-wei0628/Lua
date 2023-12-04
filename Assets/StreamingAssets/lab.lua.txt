@@ -1,0 +1,26 @@
+ function AtkValue()
+    dame = (atk - def*0.8)
+    datavalue = dame * Satk           
+    return datavalue;
+ end
+
+ function DefValue()
+    
+    return datavalue;
+ end
+
+ function MatkValue()
+                
+    return datavalue;
+ end
+
+ function MdefValue()
+                
+    return 3;
+end
+
+ function awake()
+                
+    print("start");
+end
+
