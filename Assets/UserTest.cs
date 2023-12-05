@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using XLua;
-//using MoonSharp.Interpreter;
+using MoonSharp.Interpreter;
 
 public class UserTest : MonoBehaviour
 {
@@ -36,10 +36,11 @@ public class UserTest : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             ///*var btypevalue = */newLua.V3type(Vector3.zero);
-            //newLua.V3type_twoTest(Vector3.one);
+            //newLua.V3type_twoTest(/*Vector3.one*/);
             //print(btypevalue);
-            newLua.URLA();
-            
+            DynValue dynValue = newLua.URLA();
+            V1.text = dynValue.Number.ToString();
+
         }
     }
 }

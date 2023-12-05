@@ -1,26 +1,36 @@
- function AtkValue()
-    dame = (atk - def*0.8)
-    datavalue = dame * Satk           
-    return datavalue;
+function AtkValue(atk , def)
+    dame = atk - def*0.8
+    Stak = 100
+    datavalue = dame * Stak           
+    return datavalue
  end
 
- function DefValue()
-    
-    return datavalue;
+ function DefValue(atk , def)
+    dame = atk - def*0.7
+    Stak = 0.8
+    datavalue = dame * Stak        
+    return datavalue
  end
 
- function MatkValue()
-                
-    return datavalue;
+ function MatkValue(atk , def)
+    dame = atk - def*0.6
+    Stak = 0.8
+    datavalue = dame * Stak        
+    return datavalue
  end
 
- function MdefValue()
-                
-    return 3;
+ function MdefValue(atk, def)
+
+    dame = atk + def*0.5
+    Stak = 0.8
+    datavalue = dame * Stak             
+    return datavalue
 end
 
- function awake()
-                
-    print("start");
-end
+ function test(atk,def)
 
+    dame    =atk + def*0.8
+    Stak = 0.8
+    datavalue = dame *Stak
+    return datavalue
+end

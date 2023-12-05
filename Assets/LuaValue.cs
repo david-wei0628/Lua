@@ -66,44 +66,53 @@ public class LuaValue : MonoBehaviour
 
     }
 
-    public void V3type_twoTest(Vector3 V3)
+    public void V3type_twoTest(/*Vector3 V3*/)
     {
-        double[] Nv3 = new double[3];
-        Nv3[0] = V3.x;
-        Nv3[1] = V3.y;
-        Nv3[2] = V3.z;
+        //double[] Nv3 = new double[3];
+        //Nv3[0] = V3.x;
+        //Nv3[1] = V3.y;
+        //Nv3[2] = V3.z;
 
         string scriptCode = @"
-                function V3Test (n)
-
-                    return 0
+                function V3Test (n,m)
+                        n=n+1
+                        m=n
+                    return n
                 end
                 ";
         Script script = new Script();
         script.DoString(scriptCode);
 
-        DynValue res = script.Call(script.Globals["V3Test"], Nv3);
+        DynValue res = script.Call(script.Globals["V3Test"], 3,4);
         print(res.Number);
     }
 
-    public void URLA()
+    public DynValue URLA()
     {
+        string code = Luascript();
+        Script script = new Script();
+        script.DoString(code);
+        double a = 10;
+        double b = 7;
+        DynValue res = script.Call(script.Globals["AtkValue"], a, b);
+        return res; 
+    }
+
+    string Luascript()
+    {
+        string code = null;
         string directoryPath = $"{Application.streamingAssetsPath}";
 
         string[] files = Directory.GetFiles(directoryPath);
-
         for (int i = 0; i < files.Length; i++)
         {
             string path = files[i];
             if (path.EndsWith(".lua.txt") /*|| path.EndsWith(".cs")*/)
             {
                 byte[] data = File.ReadAllBytes(path);
-                string code = System.Text.Encoding.UTF8.GetString(data);
+                code = System.Text.Encoding.UTF8.GetString(data);
 
-                Script script = new Script();
-                script.DoString(code);
-                DynValue res = script.Call(script.Globals.Get("MdefValue"));
-                print(res.Number);  
+                break;
             }
             //{
             //    byte[] data = File.ReadAllBytes(path);print(i + " " + path);
@@ -116,6 +125,6 @@ public class LuaValue : MonoBehaviour
             //    scripts.Add(name, script);
             //}
         }
-
+        return code;
     }
 }
