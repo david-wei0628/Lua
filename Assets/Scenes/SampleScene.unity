@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLua: {fileID: 0}
+  Box: {fileID: 0}
   V1: {fileID: 995952850}
 --- !u!4 &1980387200
 Transform:

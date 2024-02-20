@@ -9,7 +9,9 @@ public class UserTest : MonoBehaviour
 {
     [SerializeField]
     LuaValue newLua = new();
-        
+
+    public GameObject Box = null;
+
     public Text V1;
     //[SerializeField]
     //public Script Script = new();
@@ -40,7 +42,11 @@ public class UserTest : MonoBehaviour
             //print(btypevalue);
             DynValue dynValue = newLua.URLA();
             V1.text = dynValue.Number.ToString();
+        }
 
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Box = newLua.URLObject();
         }
     }
 }

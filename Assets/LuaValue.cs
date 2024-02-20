@@ -14,7 +14,6 @@ public class LuaValue : MonoBehaviour
     [CSharpCallLua]
     public delegate Vector3 CallV3();
 
-    public GameObject game1;
 
     public void Atype()
     {
@@ -126,5 +125,34 @@ public class LuaValue : MonoBehaviour
             //}
         }
         return code;
+    }
+
+    public GameObject URLObject()
+    {
+        GameObject code = LuaObject();
+
+        return code;
+    }
+
+    GameObject LuaObject()
+    {
+        GameObject GameBox = null;
+        string directoryPath = $"{Application.streamingAssetsPath}";
+
+        string[] files = Directory.GetFiles(directoryPath);
+        for (int i = 0; i < files.Length; i++)
+        {
+            string path = files[i];
+            if (path.EndsWith(".prefab"))
+            {
+                //var newpath = path.Replace('\\', '/');
+                GameBox = UnityEditor.AssetDatabase.LoadAssetAtPath(path.Replace('\\', '/'), typeof(GameObject)) as GameObject;
+                print(GameBox.name);
+                Instantiate(GameBox,Vector3.zero,Quaternion.identity);
+                break;
+            }
+ 
+        }
+        return GameBox;
     }
 }
