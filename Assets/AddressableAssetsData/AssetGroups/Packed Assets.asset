@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Packed Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ed197004c4384a9439b030f69284d33c
+  m_SerializeEntries:
+  - m_GUID: 68ced82ff9c1a924f9ce035c051b5823
+    m_Address: OMARU
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: af509df84b9806640bd6c46633ed689a
+    m_Address: Box
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 39e347dfe5c493145adf547e771285aa
+    m_Address: Capsule
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8ef91ae4b143b5b459d1e6bb58450edf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8d4cb70204a7c7b4a9090d39b0e51845, type: 2}
+    - {fileID: 11400000, guid: 8e90747c02513b242b68e9074d6c5936, type: 2}

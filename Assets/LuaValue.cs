@@ -146,12 +146,12 @@ public class LuaValue : MonoBehaviour
             if (path.EndsWith(".prefab"))
             {
                 //var newpath = path.Replace('\\', '/');
-                GameBox = UnityEditor.AssetDatabase.LoadAssetAtPath(path.Replace('\\', '/'), typeof(GameObject)) as GameObject;
-                print(GameBox.name);
-                Instantiate(GameBox,Vector3.zero,Quaternion.identity);
+                //GameBox = UnityEditor.AssetDatabase.LoadAssetAtPath(path.Replace('\\', '/'), typeof(GameObject)) as GameObject;
+
+                //Instantiate(GameBox,Vector3.zero,Quaternion.identity);
                 break;
             }
- 
+
         }
         return GameBox;
     }
