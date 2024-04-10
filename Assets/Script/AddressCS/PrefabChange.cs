@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AddressableAssets;
+using UnityEngine.AddressableAssets.Initialization;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 
@@ -17,13 +18,11 @@ public class PrefabChange : MonoBehaviour
     List<GameObject> A1;
 
     int i = 0;
-
     public AssetLabelReference assetLabel;
-
     // Start is called before the first frame update
     void Start()
     {
-        Addressables.LoadAssetAsync<GameObject>("A_Scence").Completed += OnAssetObjLoaded;
+        //Addressables.LoadAssetAsync<GameObject>("A_Scence").Completed += OnAssetObjLoaded;
         //StartCoroutine(PrefabList());
 
         OnAssetObjLoaded2();
@@ -35,6 +34,11 @@ public class PrefabChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            
+            //print(Addressables.RuntimePath);
+        }
         //ChangePrefab.text = A1[i].name + i;
     }
 
@@ -71,8 +75,9 @@ public class PrefabChange : MonoBehaviour
     {
         //ChangePrefab.text += "C";
         //Addressables.LoadAssetAsync<IList<GameObject>>("TestScencePrefab").Completed += OnAssetObjLoaded2;
-        ListPrefab.text = A1.Count.ToString();
-        Instantiate(A1[i]);
+        //ListPrefab.text = A1.Count.ToString();
+        //Instantiate(A1[i]);
+        ListPrefab.text = AddressablesRuntimeProperties.EvaluateProperty("BuildTarget");
     }
 
     void OnAssetObjLoaded(AsyncOperationHandle<GameObject> asyncOperationHandle)
@@ -85,8 +90,9 @@ public class PrefabChange : MonoBehaviour
         {
             //Gets called for every loaded asset
             A1.Add(obj);
-            ListPrefab.text += obj.name + A1.Count + "\n";
+            ListPrefab.text += obj.name + A1.Count + "  \n";
         });
+
     }
     void LoadResourceAsync(AsyncOperationHandle<IList<IResourceLocation>> obj)
     {
@@ -94,17 +100,9 @@ public class PrefabChange : MonoBehaviour
         {
             //A1.Add(GameObject.Destroy(resource));
             print(resource.ToString());
-
         }
         //ListPrefab.text = Addressables.RuntimePath;
     }
 
-    /*IEnumerator PrefabList()
-    {
-        A = Addressables.LoadAssetsAsync<GameObject>("TestScencePrefab", obj =>
-        {
-            Debug.Log(obj.name);
-        });
-        yield return A;
-    }*/
+    
 }
