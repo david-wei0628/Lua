@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lable: {fileID: 1891761674}
   newLocalPath: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]2'
+  A: TestScencePrefab
 --- !u!1 &1825599593
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,6 +32,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scence
+  - m_GUID: 091647abd52a2cc498dcb84a9338f9a3
+    m_Address: BuildTargetName
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Scence
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8ef91ae4b143b5b459d1e6bb58450edf, type: 2}
   m_SchemaSet:
